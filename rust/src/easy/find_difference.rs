@@ -13,7 +13,8 @@ impl Solution {
         let result: &char = char_counter
             .iter()
             .filter(|x| *x.1 == 1)
-            .collect::<Vec<_>>()[0].0;
+            .collect::<Vec<_>>()[0]
+            .0;
 
         *result
     }
