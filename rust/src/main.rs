@@ -1,4 +1,4 @@
-// #[cfg(test)]
+#![cfg(test)]
 #![allow(dead_code)]
 mod easy;
 
