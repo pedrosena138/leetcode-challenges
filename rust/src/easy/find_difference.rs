@@ -7,7 +7,7 @@ impl Solution {
             *char_counter.entry(c).or_insert(0) -= 1;
         }
         for c in t.chars() {
-            *char_counter.entry(c).or_insert(0) += 1;
+            *char_counter.entry(c).or_insert(0) += 2;
         }
 
         let result: &char = char_counter
