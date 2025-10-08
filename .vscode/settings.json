@@ -1,0 +1,7 @@
+{
+  "python.analysis.autoImportCompletions": true,
+  "cSpell.enabledFileTypes": {
+    "python": true
+  },
+  "python.analysis.typeCheckingMode": "basic"
+}
