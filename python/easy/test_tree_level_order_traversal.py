@@ -1,3 +1,7 @@
+from collections import deque
+import pytest
+
+
 class Node:
     def __init__(self, info):
         self.info = info
@@ -42,7 +46,6 @@ self.left (the left child of the node)
 self.right (the right child of the node)
 self.info (the value of the node)
 """
-from collections import deque
 
 
 def levelOrder(root):
@@ -62,12 +65,11 @@ def levelOrder(root):
     print(" ".join(map(lambda n: str(n.info), out)))
 
 
-tree = BinarySearchTree()
-t = int(input())
+@pytest.mark.parametrize("t,arr", [(6, (1, 2, 5, 3, 6, 4))])
+def test_case(t, arr):
+    tree = BinarySearchTree()
 
-arr = list(map(int, input().split()))
+    for i in range(t):
+        tree.create(arr[i])
 
-for i in range(t):
-    tree.create(arr[i])
-
-levelOrder(tree.root)
+    levelOrder(tree.root)

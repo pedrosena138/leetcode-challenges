@@ -1,4 +1,4 @@
-from collections import deque
+import pytest
 
 
 class Node:
@@ -56,9 +56,13 @@ def height(root):
     if not root:
         return -1
 
-    return 1 + max(height(root.left), height(root.right))s
+    return 1 + max(height(root.left), height(root.right))
 
 
+test_values = [(1, [15]), (7, [3, 5, 2, 1, 4, 6, 7])]
+
+
+@pytest.mark.parametrize("t, arr", test_values)
 def test_case(t, arr):
     tree = BinarySearchTree()
 
@@ -66,13 +70,3 @@ def test_case(t, arr):
         tree.create(arr[i])
 
     print(height(tree.root))
-
-
-def main():
-    # test_case(1, [15])
-
-    test_case(7, [3, 5, 2, 1, 4, 6, 7])
-
-
-if __name__ == "__main__":
-    main()
